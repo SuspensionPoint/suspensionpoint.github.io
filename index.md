@@ -2,122 +2,356 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Draft Simulations for Optimized Results
+I wrote a very efficient Draft Simulator tool for doing some personal analysis.
 
-[Link to another page](./another-page.html).
+The simulation iterates over thousands of drafts and finds optimal teams for different categories. You input your team count, rounds, which draft position you are, and what you want to optimize for. 
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
+Here are the results for my 12 team/16 round draft which I am drafted out of the #4 draft slot:
+## Optimized for total points week 1:
+```json
+{
+  "optimizationType": "HighestTotalPoints",
+  "optimizationMetric": 113.58,
+  "optimizationMetricDescription": "Total Points",
+  "numberOfDraftsSimulated": 100000,
+  "simulationTimeSeconds": 1.4046905,
+  "totalPoints": 113.58,
+  "averageTier": 7.1,
+  "averageUpside": 4.88,
+  "averagePointsAboveReplacement": 51.935933333333345,
+  "playersDrafted": {
+    "RB": [
+      {
+        "playerId": "3198",
+        "fullName": "Derrick Henry",
+        "team": "BAL",
+        "roundSelected": 1
+      },
+      {
+        "playerId": "4018",
+        "fullName": "Joe Mixon",
+        "team": "HOU",
+        "roundSelected": 4
+      },
+      {
+        "playerId": "2749",
+        "fullName": "Raheem Mostert",
+        "team": "MIA",
+        "roundSelected": 7
+      },
+      {
+        "playerId": "3164",
+        "fullName": "Ezekiel Elliott",
+        "team": "DAL",
+        "roundSelected": 8
+      }
+    ],
+    "TE": [
+      {
+        "playerId": "10859",
+        "fullName": "Sam LaPorta",
+        "team": "DET",
+        "roundSelected": 2
+      }
+    ],
+    "WR": [
+      {
+        "playerId": "2216",
+        "fullName": "Mike Evans",
+        "team": "TB",
+        "roundSelected": 3
+      },
+      {
+        "playerId": "2309",
+        "fullName": "Amari Cooper",
+        "team": "CLE",
+        "roundSelected": 5
+      },
+      {
+        "playerId": "10222",
+        "fullName": "Jayden Reed",
+        "team": "GB",
+        "roundSelected": 6
+      }
+    ],
+    "QB": [
+      {
+        "playerId": "3163",
+        "fullName": "Jared Goff",
+        "team": "DET",
+        "roundSelected": 9
+      }
+    ],
+    "K": [
+      {
+        "playerId": "1264",
+        "fullName": "Justin Tucker",
+        "team": "BAL",
+        "roundSelected": 10
+      }
+    ]
+  }
 }
 ```
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+## Optimized for lowest average Baller tier:
+```json
+{
+  "optimizationType": "LowestAverageTier",
+  "optimizationMetric": 6.1,
+  "optimizationMetricDescription": "Average Tier",
+  "numberOfDraftsSimulated": 100000,
+  "simulationTimeSeconds": 1.5334854,
+  "totalPoints": 107.92,
+  "averageTier": 6.1,
+  "averageUpside": 6.35,
+  "averagePointsAboveReplacement": 59.524,
+  "playersDrafted": {
+    "RB": [
+      {
+        "playerId": "3198",
+        "fullName": "Derrick Henry",
+        "team": "BAL",
+        "roundSelected": 1
+      },
+      {
+        "playerId": "4018",
+        "fullName": "Joe Mixon",
+        "team": "HOU",
+        "roundSelected": 2
+      },
+      {
+        "playerId": "2749",
+        "fullName": "Raheem Mostert",
+        "team": "MIA",
+        "roundSelected": 7
+      },
+      {
+        "playerId": "3164",
+        "fullName": "Ezekiel Elliott",
+        "team": "DAL",
+        "roundSelected": 8
+      }
+    ],
+    "WR": [
+      {
+        "playerId": "2216",
+        "fullName": "Mike Evans",
+        "team": "TB",
+        "roundSelected": 3
+      },
+      {
+        "playerId": "2309",
+        "fullName": "Amari Cooper",
+        "team": "CLE",
+        "roundSelected": 4
+      },
+      {
+        "playerId": "2374",
+        "fullName": "Tyler Lockett",
+        "team": "SEA",
+        "roundSelected": 9
+      }
+    ],
+    "TE": [
+      {
+        "playerId": "4033",
+        "fullName": "David Njoku",
+        "team": "CLE",
+        "roundSelected": 5
+      }
+    ],
+    "QB": [
+      {
+        "playerId": "3294",
+        "fullName": "Dak Prescott",
+        "team": "DAL",
+        "roundSelected": 6
+      }
+    ],
+    "K": [
+      {
+        "playerId": "1264",
+        "fullName": "Justin Tucker",
+        "team": "BAL",
+        "roundSelected": 10
+      }
+    ]
+  }
+}
 ```
 
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
+## Optimized for highest average Baller upside:
+```json
+{
+  "optimizationType": "HighestAverageUpside",
+  "optimizationMetric": 6.35,
+  "optimizationMetricDescription": "Average Upside",
+  "numberOfDraftsSimulated": 100000,
+  "simulationTimeSeconds": 1.5461014,
+  "totalPoints": 107.91999999999999,
+  "averageTier": 6.1,
+  "averageUpside": 6.35,
+  "averagePointsAboveReplacement": 59.524,
+  "playersDrafted": {
+    "WR": [
+      {
+        "playerId": "2216",
+        "fullName": "Mike Evans",
+        "team": "TB",
+        "roundSelected": 1
+      },
+      {
+        "playerId": "2309",
+        "fullName": "Amari Cooper",
+        "team": "CLE",
+        "roundSelected": 5
+      },
+      {
+        "playerId": "2374",
+        "fullName": "Tyler Lockett",
+        "team": "SEA",
+        "roundSelected": 9
+      }
+    ],
+    "RB": [
+      {
+        "playerId": "3198",
+        "fullName": "Derrick Henry",
+        "team": "BAL",
+        "roundSelected": 2
+      },
+      {
+        "playerId": "4018",
+        "fullName": "Joe Mixon",
+        "team": "HOU",
+        "roundSelected": 4
+      },
+      {
+        "playerId": "2749",
+        "fullName": "Raheem Mostert",
+        "team": "MIA",
+        "roundSelected": 7
+      },
+      {
+        "playerId": "3164",
+        "fullName": "Ezekiel Elliott",
+        "team": "DAL",
+        "roundSelected": 8
+      }
+    ],
+    "QB": [
+      {
+        "playerId": "3294",
+        "fullName": "Dak Prescott",
+        "team": "DAL",
+        "roundSelected": 3
+      }
+    ],
+    "TE": [
+      {
+        "playerId": "4033",
+        "fullName": "David Njoku",
+        "team": "CLE",
+        "roundSelected": 6
+      }
+    ],
+    "K": [
+      {
+        "playerId": "1264",
+        "fullName": "Justin Tucker",
+        "team": "BAL",
+        "roundSelected": 10
+      }
+    ]
+  }
+}
 ```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
 
-```
-The final element.
+## Optimized for highest average Baller PAR (Points Above Replacement):
+```json
+{
+  "optimizationType": "HighestAveragePointsAboveReplacement",
+  "optimizationMetric": 59.524,
+  "optimizationMetricDescription": "Average Points Above Replacement",
+  "numberOfDraftsSimulated": 100000,
+  "simulationTimeSeconds": 1.5972123,
+  "totalPoints": 107.91999999999999,
+  "averageTier": 6.1,
+  "averageUpside": 6.35,
+  "averagePointsAboveReplacement": 59.524,
+  "playersDrafted": {
+    "WR": [
+      {
+        "playerId": "2216",
+        "fullName": "Mike Evans",
+        "team": "TB",
+        "roundSelected": 1
+      },
+      {
+        "playerId": "2309",
+        "fullName": "Amari Cooper",
+        "team": "CLE",
+        "roundSelected": 5
+      },
+      {
+        "playerId": "2374",
+        "fullName": "Tyler Lockett",
+        "team": "SEA",
+        "roundSelected": 9
+      }
+    ],
+    "RB": [
+      {
+        "playerId": "3198",
+        "fullName": "Derrick Henry",
+        "team": "BAL",
+        "roundSelected": 2
+      },
+      {
+        "playerId": "4018",
+        "fullName": "Joe Mixon",
+        "team": "HOU",
+        "roundSelected": 4
+      },
+      {
+        "playerId": "2749",
+        "fullName": "Raheem Mostert",
+        "team": "MIA",
+        "roundSelected": 7
+      },
+      {
+        "playerId": "3164",
+        "fullName": "Ezekiel Elliott",
+        "team": "DAL",
+        "roundSelected": 8
+      }
+    ],
+    "QB": [
+      {
+        "playerId": "3294",
+        "fullName": "Dak Prescott",
+        "team": "DAL",
+        "roundSelected": 3
+      }
+    ],
+    "TE": [
+      {
+        "playerId": "4033",
+        "fullName": "David Njoku",
+        "team": "CLE",
+        "roundSelected": 6
+      }
+    ],
+    "K": [
+      {
+        "playerId": "1264",
+        "fullName": "Justin Tucker",
+        "team": "BAL",
+        "roundSelected": 10
+      }
+    ]
+  }
+}
 ```
