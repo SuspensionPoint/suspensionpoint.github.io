@@ -8,7 +8,8 @@ I wrote a very efficient Draft Simulator tool for doing some personal analysis.
 The simulation iterates over thousands of drafts and finds optimal teams for different categories. You input your team count, rounds, which draft position you are, and what you want to optimize for. 
 
 Here are the results for my 12 team/16 round draft which I am drafted out of the #4 draft slot:
-## Optimized for total points week 1:
+
+## Optimized for Team Total Points Week 1
 ```json
 {
   "optimizationType": "HighestTotalPoints",
@@ -95,7 +96,7 @@ Here are the results for my 12 team/16 round draft which I am drafted out of the
 }
 ```
 
-## Optimized for lowest average Baller tier:
+## Optimized for Lowest Average Fantasy Footballer's Player Tier
 ```json
 {
   "optimizationType": "LowestAverageTier",
@@ -182,7 +183,7 @@ Here are the results for my 12 team/16 round draft which I am drafted out of the
 }
 ```
 
-## Optimized for highest average Baller upside:
+## Optimized for Jighest Average Fantasy Footballer's Player Upside
 ```json
 {
   "optimizationType": "HighestAverageUpside",
@@ -269,7 +270,7 @@ Here are the results for my 12 team/16 round draft which I am drafted out of the
 }
 ```
 
-## Optimized for highest average Baller PAR (Points Above Replacement):
+## Optimized for Highest Average Fantasy Footballer's Player PAR (Points Above Replacement)
 ```json
 {
   "optimizationType": "HighestAveragePointsAboveReplacement",
